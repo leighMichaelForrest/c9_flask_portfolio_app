@@ -4,7 +4,7 @@ import pytz # timezone
 import requests
 import os
 
-
+from astronauts import Astronauts
 
 app = Flask(__name__)
 
@@ -80,6 +80,12 @@ def time_post():
             return render_template('time.html', result=answer)
 
 
+@app.route('/astronauts')
+def astronauts():
+	# get astronauts
+	astronauts = Astronauts.get_astro_data()
+	# send them and the template
+	return render_template('astronauts.html', astronauts=astronauts)
 
 @app.route('/python_apps')
 def python_apps_page():

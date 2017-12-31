@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}Time{% endblock %}
+
+{% block content %}
+
+  <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <i class="fa fa-space-shuttle" aria-hidden="true"></i>
+                        <h1 class="name">People in Space</h1>
+                        <hr class="star-light">
+                        <span class="skills">Who is in space?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                  <ul class="list-group">
+                        {% for astronaut in astronauts %}
+                            <li class="list-group-item"><a href={{ astronaut['url'] }}>{{ astronaut['name'] }}</a></li>
+                        {% endfor %}
+                  </ul>
+                    <hr class="star-primary">
+                </div>
+            </div>
+    </section>
+{% endblock %}
+
+{% block footer%}
+{% endblock %}
