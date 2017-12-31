@@ -15,7 +15,8 @@ def home_page():
 
 @app.route('/<name>')
 def profile(name):
-	return render_template('index.html', name=name)
+	new_name = name +  " likes to eat mangoes."
+	return render_template('index.html', name=new_name)
 
 
 @app.route('/add_numbers', methods=['GET','POST'])
@@ -40,7 +41,7 @@ def shopping_list_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 	# get list from session into shop_list
-	
+
 
     if request.method == 'GET':
       return render_template('shopping_list.html')
